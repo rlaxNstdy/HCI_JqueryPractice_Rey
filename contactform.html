@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="contactform.css">
+        
+    </head>
+<body>
+
+<form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <div class="error-message" id="nameError"></div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <div class="error-message" id="emailError"></div>
+
+    <label for="message">Message to the chef that you want to order ?:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <div class="error-message" id="messageError"></div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#contactForm').submit(function(e){
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var message = $('#message').val();
+6
+            $('#nameError').text('');
+            $('#emailError').text('');
+            $('#messageError').text('');
+
+            if (name.length < 1) {
+                $('#nameError').text('Name is required');
+            }
+
+            if (!isValidEmail(email)) {
+                $('#emailError').text('Invalid email address');
+            }
+
+            if (message.length < 1) {
+                $('#messageError').text('Message is required');
+            }
+
+
+        });
+
+        function isValidEmail(email) {
+        
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    });
+</script>
+
+</body>
+</html>

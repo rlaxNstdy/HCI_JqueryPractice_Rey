@@ -1,0 +1,51 @@
+/*     home page for buttonn  */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#articles-container {
+  width: 80%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.article {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#loading-message {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #1b2fae;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #1b2fae}
+
+.button:active {
+  background-color: #1b2fae;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
